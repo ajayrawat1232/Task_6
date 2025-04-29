@@ -9,7 +9,8 @@ Product/City Rankings: Discover top-performing products and regions
 Discount Effectiveness: Analyze promotional strategies
 Profit Monitoring: Track operational efficiency
 ## 🛠️ Setup Instructions
-Database Requirements
+## Database Requirements
+
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
     order_date DATE,
@@ -20,11 +21,14 @@ CREATE TABLE orders (
     discount_percent DECIMAL(5,2),
     profit DECIMAL(10,2)
 );
+
 Import Data
 Create database: CREATE DATABASE online_sales;
 Import CSV: Use your DBMS's import tool (e.g., \copy in PostgreSQL)
+
 ## 📊 Key Queries
 Monthly Sales Report
+
 -- Revenue by Month
 SELECT 
   EXTRACT(YEAR FROM order_date) AS year,
@@ -34,7 +38,9 @@ SELECT
 FROM orders
 GROUP BY year, month
 ORDER BY year, month;
-Product Performance
+
+##Product Performance
+
 -- Top 5 Products
 SELECT
   product_id,
@@ -44,6 +50,7 @@ FROM orders
 GROUP BY product_id
 ORDER BY total_sales DESC
 LIMIT 5;
+
 ## 📈 Results Visualization
 Sample output format for monthly trends:
 
